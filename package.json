@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate": "faust generatePossibleTypes  && faust generateGlobalStylesheet",
+    "generate": "faust generatePossibleTypes && faust generateGlobalStylesheet",
     "blockset": "faust blockset",
-    "prod": "faust generatePossibleTypes  && faust generateGlobalStylesheet && next build"
+    "prod": "faust generatePossibleTypes && faust generateGlobalStylesheet && next build"
   },
   "dependencies": {
     "@apollo/client": "^3.14.0",
