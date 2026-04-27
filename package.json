@@ -9,7 +9,7 @@
     "lint": "eslint",
     "generate": "faust generatePossibleTypes && faust generateGlobalStylesheet",
     "blockset": "faust blockset",
-    "prod": "faust generatePossibleTypes && faust generateGlobalStylesheet && next build"
+    "prod": "faust build && next build"
   },
   "dependencies": {
     "@apollo/client": "^3.14.0",
