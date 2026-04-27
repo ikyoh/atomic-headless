@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "generate && next build",
+    "prod": "generate && next build",
     "start": "next start",
     "lint": "eslint",
     "generate": "faust generatePossibleTypes  && faust generateGlobalStylesheet",
