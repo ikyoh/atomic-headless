@@ -8,7 +8,7 @@ export default function AcfCardHeader({attributes, innerBlocks}) {
 	const data = parseJSON(attributes?.data) || {};
 
 	return (
-		<Card className="border border-primary overflow-hidden">
+		<Card className="border border-primary overflow-hidden py-0">
             <CardHeader className='text-center bg-primary text-white text-lg font-bold uppercase pt-4 pb-3'>
                 {data.title}
             </CardHeader>

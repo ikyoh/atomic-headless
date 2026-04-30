@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export default function AcfItemPicture({innerBlocks, blockItemPicture}) {
 
+	console.log('blockItemPicture', blockItemPicture)
 
 	return (
         <div className='flex items-start gap-3 my-3'>
-			<div className="bg-primary rounded-full overflow-hidden w-7.5 h-7.5 p-x shadow-md shadow-primary/20 -mt-1">
+			<div className="flex-none bg-primary rounded-full overflow-hidden w-7.5 h-7.5 p-x shadow-md shadow-primary/20 -mt-1">
 				<Image
 					src={blockItemPicture.image.node.mediaItemUrl}
 					alt={blockItemPicture.image.node.altText || 'Alt text not available'}
