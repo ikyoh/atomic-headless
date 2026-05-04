@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Hero({ featuredURL, title, subtitle, isImageContain }) {
     return (
-        <div className={cn("relative h-[calc(100dvh-124px)] md:h-122 bg-[radial-gradient(50%_50%_at_50%_50%,#344C6B_0%,#17273F_100%)]")}>
+        <div className={cn("md:-top-9.5 relative h-[calc(100dvh-124px)] md:h-122 bg-[radial-gradient(50%_50%_at_50%_50%,#344C6B_0%,#17273F_100%)]")}>
             {featuredURL &&
                 <Image
                     src={featuredURL}

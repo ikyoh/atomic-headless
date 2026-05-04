@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 export default function HeroYoutube({ youtubeID = "YuN82rArMqM" }) {
     return (
-        <div className={cn("relative h-[calc(100dvh-124px)] md:h-[calc(100vh-90px)] w-full overflow-hidden")}>
+        <div className={cn("md:-top-9 relative h-[calc(100dvh-124px)] md:h-[calc(100vh-90px)] w-full overflow-hidden")}>
             <iframe
                 className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip
                         w-screen h-[56.25vw] min-h-[calc(100vh-90px)] min-w-[177.78dvh]"
