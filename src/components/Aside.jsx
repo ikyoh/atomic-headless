@@ -11,7 +11,7 @@ const Aside = ({ children }) => {
     return (
         <nav
             className={cn(
-                "flex fixed top-25 md:top-45 z-30 w-70 transition-all duration-300 ease-in-out",
+                "flex fixed top-25 md:top-40 z-30 w-70 transition-all duration-300 ease-in-out",
                 isActive ? "translate-x-0 right-0" : "translate-x-full right-2 md:right-12"
             )}
         >
