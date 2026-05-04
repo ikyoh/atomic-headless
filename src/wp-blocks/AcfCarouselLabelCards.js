@@ -22,7 +22,7 @@ export default function AcfCarouselLabelCards({carouselWithLabelsCards}) {
 			<CarouselContent>
 				{carouselWithLabelsCards?.cards?.map((card, index) => (
 					<CarouselItem key={index} className="basis-1/3 md:basis-1/2 pl-(--wp--preset--spacing--base)">
-						<div className="h-full rounded-md p-(--wp--preset--spacing--base) bg-(--wp--preset--color--medium)">
+						<div className="h-full rounded-md p-(--wp--preset--spacing--base) bg-medium">
 							<Image
 								src={card.image.node.mediaItemUrl}
 								alt={card.image.node.altText || "Alt text not available"}
