@@ -208,7 +208,7 @@ export default function ProductsBigMenu() {
                 isHidden ? "-translate-y-full" : "translate-y-0"
             )}
         >
-            <NavigationMenuList className="justify-between max-w-6xl mx-auto">
+            <NavigationMenuList className="justify-between max-w-7xl mx-auto">
                 {data?.products?.nodes?.filter(product => product.parentId === null).sort((a, b) => (a.options?.order || 0) - (b.options?.order || 0)).map((product) => (
                     product.featuredImage && (
                         <NavigationMenuItem key={product.id}>
