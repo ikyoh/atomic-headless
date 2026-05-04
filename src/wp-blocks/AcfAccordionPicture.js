@@ -25,7 +25,7 @@ export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 						onClick={() => setActiveIndex(index)}
 						className={cn("border-2 border-primary rounded-md bg-primary", (activeIndex === index ? "bg-white drop-shadow-md/30" : "primary"))}
 					>
-						<AccordionTrigger className={cn("pl-3 py-5 uppercase font-bold", (activeIndex === index ? "text-primary" : "text-white"))}>{block.title}</AccordionTrigger>
+						<AccordionTrigger className={cn("pl-3 py-2 uppercase font-bold", (activeIndex === index ? "text-primary" : "text-white"))}>{block.title}</AccordionTrigger>
 						<AccordionContent>
 							<div className="px-3 pb-3">
 								<p className="text-black font-bold mb-2">{block.subtitle}</p>
