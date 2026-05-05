@@ -1,37 +1,53 @@
 import CardZoomLink from "@/components/CardZoomLink";
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
-export default async function OtherProductsCategoriesCards() {
+export default function OtherProductsCategoriesCards() {
 
-
-	const GET_PRODUCT_NO_PARENTS = gql`
-		query ProductsNoParent {
-			products(where: {parent: 0}) {
-				nodes {
-					id
-					uri
-					title
-					featuredImage {
-						node {
+	const GET_PRODUCTS = gql`
+	query Products {
+		products(first: 500) {
+			nodes {
+				parentId
+				id
+				uri
+				title
+				featuredImage {
+					node {
+					altText
+					mediaItemUrl
+					mimeType
+					}
+				}
+				options {
+					order
+					image {
+					node {
 						altText
 						mediaItemUrl
 						mimeType
-						}
+					}
+					}
+				}
+				children {
+					nodes {
+						id
 					}
 				}
 			}
 		}
-	`;
+	}
+`;
 
-	const { data } = await client.query({
-	query: GET_PRODUCT_NO_PARENTS,
+	const { data, loading } = useQuery(GET_PRODUCTS, {
+	query: GET_PRODUCTS,
 	});
 
 	console.log('data', data)
-	
+	if (loading) return null
+
 	return (
 		<>
-			{products?.nodes?.map((product) => (
+			{data?.products?.nodes?.filter(product => product.parentId === null).sort((a, b) => (a.options?.order || 0) - (b.options?.order || 0)).map((product) => (
 				product.featuredImage && (
 					<CardZoomLink
 						key={product.id}

@@ -118,7 +118,10 @@ export default function ProductsBigMenu() {
 `;
 
 
-    const { data, loading, error } = useQuery(GET_PRODUCTS);
+    //const { data, loading, error } = useQuery(GET_PRODUCTS);
+    const { data, loading, error } = useQuery(GET_PRODUCTS, {
+        query: GET_PRODUCTS,
+    });
 
     if (loading) return null;
     if (error) return <p>Error: {error.message}</p>;
