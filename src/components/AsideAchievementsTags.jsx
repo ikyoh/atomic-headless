@@ -154,7 +154,7 @@ const AsideAchievementsTags = () => {
                                     alt={item.titre}
                                     width={24}
                                     height={24}
-                                    className="h-6 w-6 rounded-none invert dark:invert-0 group-hover:invert-0"
+                                    className="h-6 w-6 rounded-none dark:invert group-hover:invert"
                                 />
 
                                 <MultiSelectValue
@@ -178,7 +178,7 @@ const AsideAchievementsTags = () => {
                                                     alt={element.titre}
                                                     width={20}
                                                     height={20}
-                                                    className="h-6 w-6 not-even:invert dark:invert-0 object-cover rounded-none"
+                                                    className="h-6 w-6 not-even:invert dark:invert object-cover rounded-none"
                                                 />
                                             }
                                         >
