@@ -30,8 +30,8 @@ export default function AcfCarousel({blockCarousel}) {
 					</CarouselItem>
 				))} 
 			</CarouselContent>
-			<CarouselPrevious className="left-5 md:left-30 bg-white/40" />
-			<CarouselNext className="right-5 md:right-30 bg-white/40" />
+			<CarouselPrevious className="left-5 md:left-30" />
+			<CarouselNext className="right-5 md:right-30" />
 		</Carousel>
 
 	);
