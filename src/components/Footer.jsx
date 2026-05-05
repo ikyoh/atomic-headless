@@ -99,9 +99,6 @@ export default function Footer() {
 
     return (
         <footer className="*:max-w-full! *:w-full! overflow-hidden">
-
-
-
             <WordPressBlocksViewer blocks={blockList} />
         </footer>
     );

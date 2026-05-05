@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import { WordPressBlocksViewer } from "@faustwp/blocks";
 
-export default function OtherFooterCta({innerBlocks}) {
+export default function OtherFooterCta({ innerBlocks, ...props }) {
 
 	return (
 		<div className="py-10 space-y-5 custom_gradient">

@@ -3,9 +3,7 @@ import { WordPressBlocksViewer } from "@faustwp/blocks";
 import Image from "next/image";
 
 
-export default function AcfItemPicture({innerBlocks, blockItemPicture}) {
-
-	console.log('blockItemPicture', blockItemPicture)
+export default function AcfItemPicture({ innerBlocks, blockItemPicture }) {
 
 	return (
         <div className='flex items-start gap-3 my-3'>
