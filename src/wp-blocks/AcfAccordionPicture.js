@@ -17,17 +17,17 @@ export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 	return (
 		<div className="mx-auto max-w-[calc(100vw-100px)] md:max-w-(--wp--style--global--content-size) w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
 			<div className="w-full space-y-2">
-				<Accordion defaultValue={0} className="w-full space-y-2">
+				<Accordion defaultValue={["0"]} className="w-full space-y-2">
 				{blocks.map((block, index) => (
 					<AccordionItem
-						value={index} 
+						value={index.toString()}
 						key={index}
 						onClick={() => setActiveIndex(index)}
 						className={cn("border-2 border-primary rounded-md bg-primary", (activeIndex === index ? "bg-white drop-shadow-md/30" : "primary"))}
 					>
-						<AccordionTrigger className={cn("pl-3 py-2 uppercase font-bold", (activeIndex === index ? "text-primary" : "text-white"))}>{block.title}</AccordionTrigger>
+						<AccordionTrigger className={cn("py-2 uppercase font-bold", (activeIndex === index ? "text-primary" : "text-white"))}>{block.title}</AccordionTrigger>
 						<AccordionContent>
-							<div className="px-3 pb-3">
+							<div className="px-5 pb-3">
 								<p className="text-black font-bold mb-2">{block.subtitle}</p>
 								<p className="text-black">{block.content}</p>
 							</div>
