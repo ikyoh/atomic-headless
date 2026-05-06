@@ -178,7 +178,7 @@ const AsideAchievementsTags = () => {
                                                     alt={element.titre}
                                                     width={20}
                                                     height={20}
-                                                    className="h-6 w-6 not-even:invert-0 dark:invert object-cover rounded-none"
+                                                    className="h-5 w-5 not-even:invert dark:invert-0 object-cover rounded-none"
                                                 />
                                             }
                                         >
