@@ -9,7 +9,7 @@ export default function AcfKnowHowCard({blockKnowHow}) {
 	const [active, setActive] = useState(false)
 
 	return (
-		<Card className={cn("cursor-pointer text-white overlow-hidden aspect-square overflow-hidden p-0 relative shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 border-0 group", blockKnowHow.color[0] === "red"  ?"bg-primary shadow-primary/30" : "bg-dark  shadow-dark/30")}>
+		<Card className={cn("cursor-pointer text-white overlow-hidden aspect-square overflow-hidden p-0 relative shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 border-0 group", blockKnowHow.color[0] === "red"  ?"bg-primary shadow-primary/30" : "bg-black shadow-dark/30")}>
 			<div className={cn("flex-none h-full w-[200%] grid grid-cols-2 gap-0 transition-transform duration-500 ease-in-out", active && "-translate-x-1/2")} onClick={() => setActive(!active)}>
 				<CardContent className="aspect-square flex flex-col justify-between items-center p-0 relative">
 					<div className="h-[70%] flex-none p-3">
