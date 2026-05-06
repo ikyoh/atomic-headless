@@ -183,7 +183,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute p-2 size-12! rounded-full bg-dark/10! dark:bg-white/10! border-none!",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -193,7 +193,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeft />
+      <ChevronLeft className="h-full! w-full! text-white!" />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -213,7 +213,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute p-2 size-12! rounded-full bg-dark/10! dark:bg-white/10! border-none!",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -223,7 +223,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRight />
+      <ChevronRight className="h-full! w-full! text-white!" />
       <span className="sr-only">Next slide</span>
     </Button>
   )
