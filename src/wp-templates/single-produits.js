@@ -43,6 +43,7 @@ SingleProduct.query = gql`
 	${blocks.OtherProductsSubcategoriesCards.fragments.entry}
 	${blocks.AcfCardHeader.fragments.entry}
 	${blocks.AcfCardPicture.fragments.entry}
+	${blocks.AcfCardLink.fragments.entry}
 	${blocks.AcfItemPicture.fragments.entry}
 	${blocks.AcfTeam.fragments.entry}
 	${blocks.AcfCarousel.fragments.entry}
@@ -90,6 +91,7 @@ SingleProduct.query = gql`
 				...${blocks.OtherProductsCategoriesCards.fragments.key}
 				...${blocks.OtherProductsSubcategoriesCards.fragments.key}
 				...${blocks.AcfCardPicture.fragments.key}
+				...${blocks.AcfCardLink.fragments.key}
 				...${blocks.AcfCardHeader.fragments.key}
 				...${blocks.AcfItemPicture.fragments.key}
 				...${blocks.AcfTeam.fragments.key}

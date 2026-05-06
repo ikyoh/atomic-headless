@@ -1,6 +1,7 @@
 import { CoreBlocks } from "@faustwp/blocks";
 import AcfAccordionPicture from "./AcfAccordionPicture";
 import AcfCardHeader from "./AcfCardHeader";
+import AcfCardLink from "./AcfCardLink";
 import AcfCardPicture from "./AcfCardPicture";
 import AcfCarousel from "./AcfCarousel";
 import AcfCarouselLabelCards from "./AcfCarouselLabelCards";
@@ -41,6 +42,7 @@ const blocks = {
   OtherProductsSubcategoriesCards: OtherProductsSubcategoriesCards,
   AcfCardPicture: AcfCardPicture,
   AcfCardHeader: AcfCardHeader,
+  AcfCardLink: AcfCardLink,
   AcfItemPicture: AcfItemPicture,
   AcfItemPicture: AcfItemPicture,
   AcfTeam: AcfTeam,

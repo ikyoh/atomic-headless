@@ -14,6 +14,8 @@ export default function PageTemplate(props) {
 	const { title, subtitle, featuredImage, editorBlocks, navigationInterne, template } = props.data.page;
 	const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 
+  console.log('blockList', blockList)
+
 	return (
     <AsideProvider>
       <Layout>
@@ -44,6 +46,7 @@ PageTemplate.query = gql`
   ${blocks.OtherProductsCategoriesCards.fragments.entry}
   ${blocks.AcfCardHeader.fragments.entry}
   ${blocks.AcfCardPicture.fragments.entry}
+  ${blocks.AcfCardLink.fragments.entry}
   ${blocks.AcfItemPicture.fragments.entry}
   ${blocks.AcfTeam.fragments.entry}
   ${blocks.AcfCarousel.fragments.entry}
@@ -105,6 +108,7 @@ PageTemplate.query = gql`
         ...${blocks.OtherFooterCta.fragments.key}
         ...${blocks.OtherProductsCategoriesCards.fragments.key}
         ...${blocks.AcfCardPicture.fragments.key}
+        ...${blocks.AcfCardLink.fragments.key}
         ...${blocks.AcfCardHeader.fragments.key}
         ...${blocks.AcfItemPicture.fragments.key}
         ...${blocks.AcfTeam.fragments.key}
