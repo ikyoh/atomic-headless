@@ -1,3 +1,4 @@
+import AsideNavigation from '@/components/AsideNavigation';
 import { gql } from '@apollo/client';
 import { WordPressBlocksViewer } from '@faustwp/blocks';
 import { flatListToHierarchical } from '@faustwp/core';
@@ -6,19 +7,16 @@ import Layout from '../components/Layout';
 import ProductsBigMenu from '../components/ProductsBigMenu';
 import blocks from '../wp-blocks';
 
-export default function Component({ loading, data }) {
-  // Loading state for previews.
-  if (loading) {
-    return <>Loading...</>;
-  }
+export default function Component(props) {
 
-  const { title, editorBlocks } = data?.page ?? { title: '' };
+  const { title, subtitle, editorBlocks, navigationInterne } = props.data.page;
   const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 
   return (
     <Layout>
       <ProductsBigMenu />
-      <HeroYoutube />
+      <HeroYoutube title={title} subtitle={subtitle.subtitle} />
+            {navigationInterne?.navigationInterne && <AsideNavigation items={navigationInterne.navigationInterne} />}
         <main id="content">
           <WordPressBlocksViewer blocks={blockList} />
         </main>
@@ -58,6 +56,20 @@ Component.query = gql`
   ) {
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title
+      subtitle {
+        subtitle
+      }
+      navigationInterne {
+        navigationInterne {
+          ancre
+          intitule
+            icon {
+              node {
+                mediaItemUrl
+              }
+            }
+        }
+      }
       content
       editorBlocks {
         name
