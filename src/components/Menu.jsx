@@ -67,7 +67,7 @@ export default function Menu({ isMobile = false }) {
                         >
 
                             {isMobile && item.icon?.node?.sourceUrl && (
-                                <div className="flex-none w-10 h-10">
+                                <div className="flex-none w-10 h-10 p-2.5">
                                     <Image
                                         src={item.icon.node.sourceUrl}
                                         alt=""
