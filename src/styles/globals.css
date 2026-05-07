@@ -171,7 +171,7 @@ h2.h2-top-60-active {
 }
 
 footer a {
-  @apply decoration-none hover:underline;
+  @apply no-underline hover:underline;
 }
 
 @utility custom_gradient {
