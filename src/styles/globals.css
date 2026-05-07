@@ -170,6 +170,10 @@ h2.h2-top-60-active {
   @apply bg-primary text-white text-lg py-0.5 px-2;
 }
 
+footer a {
+  @apply decoration-none hover:underline;
+}
+
 @utility custom_gradient {
   @apply bg-linear-[92deg,#E2000F_-58%,#A7000B_-30%,#A7000B_14%,#E2000F_29%,#FF2F3D_69%,#E2000F_86%];
 }
@@ -177,7 +181,6 @@ h2.h2-top-60-active {
 @utility custom_button_gradient {
   @apply bg-linear-[92deg,#E2000F_-58%,#A7000B_-30%,#A7000B_14%,#E2000F_29%,#FF2F3D_69%,#E2000F_86%];
 }
-
 
 @utility custom-scroll {
   scrollbar-color: oklch(1 0 0 / 50%) transparent;
@@ -222,8 +225,6 @@ h2.h2-top-60-active {
     @apply flex-nowrap!;
   }
 }
-
-
 
 @layer wordpress-button {
 
