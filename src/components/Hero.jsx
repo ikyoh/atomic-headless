@@ -11,7 +11,7 @@ export default function Hero({ featuredURL, title, subtitle, isImageContain }) {
                     src={featuredURL}
                     alt={title || "Featured Image"}
                     fill
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 150vw, 100vw"
                     quality={90}
                     priority
                     className={cn(isImageContain ? "object-contain" : "object-cover")}
