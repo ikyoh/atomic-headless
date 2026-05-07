@@ -91,7 +91,7 @@ export default function Menu({ isMobile = false }) {
                                         "absolute left-0 right-0 mx-auto overflow-hidden",
                                         isMobile
                                             ? "w-14 h-5 -top-1"
-                                            : "w-26 h-6 -bottom-8.5"
+                                            : "w-26 h-6 -bottom-9.5"
                                     )}
                                 >
                                     <div className={cn("absolute bg-primary rounded-full shadow-md shadow-primary left-1/2 -translate-x-1/2", isMobile ? "bottom-4 size-14" : "top-4 rotate-180 size-36")} />
