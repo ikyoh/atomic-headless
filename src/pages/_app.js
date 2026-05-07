@@ -17,23 +17,23 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <AsideProvider>
       <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      transition={true}
-      //disableTransitionOnChange
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        transition={true}
+        //disableTransitionOnChange
       >
-
         <FaustProvider pageProps={pageProps}>
           <WordPressBlocksProvider
             config={{
               blocks,
-              theme: fromThemeJson(themeJson), 
-            }}>
+              theme: fromThemeJson(themeJson),
+            }}
+          >
             <Component {...pageProps} key={router.asPath} />
           </WordPressBlocksProvider>
         </FaustProvider>
-        </ThemeProvider>
-        </AsideProvider>
+      </ThemeProvider>
+    </AsideProvider>
   );
 }
