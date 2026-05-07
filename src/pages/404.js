@@ -23,6 +23,7 @@ const PAGE_404_QUERY = gql`
 	${blocks.OtherProductsCategoriesCards.fragments.entry}
 	${blocks.AcfCardHeader.fragments.entry}
 	${blocks.AcfCardPicture.fragments.entry}
+	${blocks.AcfCardLink.fragments.entry}
 	${blocks.AcfItemPicture.fragments.entry}
 	${blocks.AcfTeam.fragments.entry}
 	${blocks.AcfCarousel.fragments.entry}
@@ -54,15 +55,54 @@ const PAGE_404_QUERY = gql`
 				parentId: parentClientId
 			}
 		}
+
+		footer: templatePart(id: "footer", idType: SLUG) {
+			... on TemplatePart {
+				editorBlocks {
+					name
+					__typename
+					renderedHtml
+					id: clientId
+					parentId: parentClientId
+					...${blocks.CoreParagraph.fragments.key}
+					...${blocks.CoreColumns.fragments.key}
+					...${blocks.CoreColumn.fragments.key}
+					...${blocks.CoreButtons.fragments.key}
+					...${blocks.CoreButton.fragments.key}
+					...${blocks.CoreQuote.fragments.key}
+					...${blocks.CoreImage.fragments.key}
+					...${blocks.CoreSeparator.fragments.key}
+					...${blocks.CoreList.fragments.key}
+					...${blocks.CoreHeading.fragments.key}
+					...${blocks.OtherFooterCta.fragments.key}
+					...${blocks.OtherProductsCategoriesCards.fragments.key}
+					...${blocks.AcfCardPicture.fragments.key}
+					...${blocks.AcfCardLink.fragments.key}
+					...${blocks.AcfCardHeader.fragments.key}
+					...${blocks.AcfItemPicture.fragments.key}
+					...${blocks.AcfTeam.fragments.key}
+					...${blocks.AcfCarousel.fragments.key}
+					...${blocks.AcfCarouselRoundedCards.fragments.key}
+					...${blocks.AcfCarouselLabelCards.fragments.key}
+					...${blocks.AcfKnowHowCard.fragments.key}
+					...${blocks.AcfLogos.fragments.key}
+					...${blocks.AcfYoutube.fragments.key}
+					...${blocks.AcfAccordionPicture.fragments.key}
+					...${blocks.AcfTimeline.fragments.key}
+					...${blocks.CoreGroup.fragments.key}
+				}
+			}
+		}
 	}
 `;
 
 export default function Custom404({ data }) {
 	const page = data?.page;
+	const footerBlocks = data?.footer?.editorBlocks;
 
 	if (!page) {
 		return (
-			<Layout>
+			<Layout footerBlocks={footerBlocks}>
 				<ProductsBigMenu />
 				<main id="content">
 					<h1>Page not found</h1>
@@ -76,7 +116,7 @@ export default function Custom404({ data }) {
 	});
 
 	return (
-		<Layout>
+		<Layout footerBlocks={footerBlocks}>
 			<ProductsBigMenu />
 			<Hero
 				featuredURL={page.featuredImage?.node?.mediaItemUrl}
@@ -137,7 +177,9 @@ export async function getStaticProps() {
 
 		return {
 			props: {
-				data: data?.pageBy ? { page: data.pageBy } : null,
+				data: data?.pageBy
+					? { page: data.pageBy, footer: data.footer ?? null }
+					: null,
 			},
 			revalidate: false,
 		};
