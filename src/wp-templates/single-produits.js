@@ -13,6 +13,7 @@ export default function SingleProduct(props) {
 	const footerBlocks = props.data.footer?.editorBlocks;
 
 
+
 	return (
 	<Layout footerBlocks={footerBlocks}>
 		<ProductsBigMenu />
@@ -55,6 +56,7 @@ SingleProduct.query = gql`
   ${blocks.AcfTimeline.fragments.entry}
   ${blocks.AcfAccordionPicture.fragments.entry}
   ${blocks.CoreGroup.fragments.entry}
+  ${blocks.OtherProductsSubcategoriesCards.fragments.entry}
 
 	query GetProductByUri($uri: String!) {
 		productBy(uri: $uri) {
@@ -75,6 +77,7 @@ SingleProduct.query = gql`
 			editorBlocks {
 				name
 				__typename
+				renderedHtml
 				id: clientId
 				parentId: parentClientId
 		...${blocks.CoreParagraph.fragments.key}
@@ -103,6 +106,7 @@ SingleProduct.query = gql`
 		...${blocks.AcfAccordionPicture.fragments.key}
 		...${blocks.AcfTimeline.fragments.key}
 		...${blocks.CoreGroup.fragments.key}
+		...${blocks.OtherProductsSubcategoriesCards.fragments.key}
 			}
 	    }
 
