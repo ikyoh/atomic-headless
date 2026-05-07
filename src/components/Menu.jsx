@@ -61,7 +61,7 @@ export default function Menu({ isMobile = false }) {
                             className={cn(
                                 "relative font-semibold hover:text-primary transition-colors",
                                 isMobile
-                                    ? "text-xs flex flex-col items-center justify-center px-2 flex-1"
+                                    ? "text-primary text-xs flex flex-col items-center justify-center px-2 flex-1"
                                     : "uppercase"
                             )}
                         >
