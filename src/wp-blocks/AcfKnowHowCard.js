@@ -18,7 +18,7 @@ export default function AcfKnowHowCard({blockKnowHow}) {
 							alt={blockKnowHow.image.node.altText || 'Alt text not available'} 
 							width={200}
 							height={200}
-							className="p-0 object-scale-down w-full h-full"
+							className="p-0 w-full h-full"
 							unoptimized={blockKnowHow.image.node.mimeType === "image/svg+xml" ? true : false}
 						/>
 					</div>
