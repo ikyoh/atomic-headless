@@ -21,7 +21,7 @@ export default function AcfCarouselLabelCards({carouselWithLabelsCards}) {
 		>
 			<CarouselContent>
 				{carouselWithLabelsCards?.cards?.map((card, index) => (
-					<CarouselItem key={index} className="basis-1/3 md:basis-1/2 pl-(--wp--preset--spacing--base)">
+					<CarouselItem key={index} className="basis-full md:basis-1/2 pl-(--wp--preset--spacing--base)">
 						<div className="h-full rounded-md p-(--wp--preset--spacing--base) bg-medium">
 							<Image
 								src={card.image.node.mediaItemUrl}
@@ -36,8 +36,8 @@ export default function AcfCarouselLabelCards({carouselWithLabelsCards}) {
 					</CarouselItem>
 				))} 
 			</CarouselContent>
-			<CarouselPrevious className="-left-16" />
-			<CarouselNext className="-right-16" />
+			<CarouselPrevious className="md:-left-16" />
+			<CarouselNext className="md:-right-16" />
 		</Carousel>
 
 	);
