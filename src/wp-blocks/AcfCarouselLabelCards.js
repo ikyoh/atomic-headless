@@ -36,8 +36,8 @@ export default function AcfCarouselLabelCards({carouselWithLabelsCards}) {
 					</CarouselItem>
 				))} 
 			</CarouselContent>
-			<CarouselPrevious className="md:-left-16" />
-			<CarouselNext className="md:-right-16" />
+			<CarouselPrevious className="left-4 md:-left-16" />
+			<CarouselNext className="right-4 md:-right-16" />
 		</Carousel>
 
 	);
