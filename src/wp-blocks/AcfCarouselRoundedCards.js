@@ -63,8 +63,8 @@ export default function AcfCarouselRoundedCards({attributes}) {
 				</CarouselItem>
 			))}
 		</CarouselContent>
-		<CarouselPrevious />
-		<CarouselNext />
+		<CarouselPrevious className="left-4 md:-left-16" />
+		<CarouselNext className="right-4 md:-right-16" />
     </Carousel>
 
 	);
