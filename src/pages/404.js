@@ -146,7 +146,7 @@ console.log('blockList', blockList)
 				title={page.title}
 				subtitle={page.subtitle?.subtitle}
 			/>
-			<main id="content">fsdfsd
+			<main id="content">
 				<WordPressBlocksViewer blocks={blockList} />
 			</main>
 		</Layout>
