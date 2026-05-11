@@ -142,7 +142,7 @@ export default function ProductsBigMenu() {
                             text={product.title}
                             imageURL={product.options?.image?.node?.mediaItemUrl}
                             backgroundGradient
-                            imageClassName="p-3"
+                            imageClassName="p-1 object-contain"
                         />
                         : <Link href={product.uri} className="no-underline! flex-row items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105">
                             <Image
