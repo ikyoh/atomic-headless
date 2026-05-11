@@ -142,6 +142,7 @@ export default function ProductsBigMenu() {
                             text={product.title}
                             imageURL={product.options?.image?.node?.mediaItemUrl}
                             backgroundGradient
+                            imageClassName="p-3"
                         />
                         : <Link href={product.uri} className="no-underline! flex-row items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105">
                             <Image
@@ -178,7 +179,7 @@ export default function ProductsBigMenu() {
                         </NavigationMenuTrigger>
                         {product.children?.nodes?.length > 0 &&
                             <NavigationMenuContent>
-                                <div className={cn("max-w-3xl gap-3 p-3 grid", data?.products?.nodes?.filter(p => p.parentId === product.id).length <= 6 ? "grid-cols-" + data?.products?.nodes?.filter(p => p.parentId === product.id).length : "grid-cols-6")}>
+                                <div className={cn("max-w-7xl gap-3 p-3 grid", data?.products?.nodes?.filter(p => p.parentId === product.id).length <= 6 ? "grid-cols-" + data?.products?.nodes?.filter(p => p.parentId === product.id).length : "grid-cols-6")}>
                                     {
                                         data?.products?.nodes?.filter(p => p.parentId === product.id).sort((a, b) => (a.options?.order || 0) - (b.options?.order || 0)).map(subProduct =>
                                             product.children?.nodes?.length === 0 ?
@@ -220,7 +221,7 @@ export default function ProductsBigMenu() {
                             </NavigationMenuTrigger>
                             {product.children?.nodes?.length > 0 &&
                                 <NavigationMenuContent>
-                                    <div className={cn("max-w-3xl gap-3 p-3 grid grid-cols-4", data?.products?.nodes?.filter(p => p.parentId === product.id).length <= 6 ? "grid-cols-" + data?.products?.nodes?.filter(p => p.parentId === product.id).length : "grid-cols-6")}>
+                                    <div className={cn("max-w-7xl gap-3 p-3 grid grid-cols-4", data?.products?.nodes?.filter(p => p.parentId === product.id).length <= 6 ? "grid-cols-" + data?.products?.nodes?.filter(p => p.parentId === product.id).length : "grid-cols-6")}>
                                         {data?.products?.nodes?.filter(p => p.parentId === product.id).map(subProduct => (
                                             (subProduct.featuredImage || subProduct.options) && (
                                                 subProduct.children?.nodes?.length === 0 ?

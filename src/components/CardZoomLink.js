@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CardZoomLink({imageURL, text, link, backgroundGradient=false}) {
+export default function CardZoomLink({imageURL, text, link, backgroundGradient=false, imageClassName}) {
 
 
     if (!imageURL || !text ) return null;
@@ -15,7 +15,7 @@ export default function CardZoomLink({imageURL, text, link, backgroundGradient=f
                     alt={text}
                     width={200}
                     height={160}
-                    className="object-cover w-15 h-15 sm:w-full sm:h-[calc(100%-40px)]"
+                    className={cn("object-cover w-15 h-15 sm:w-full sm:h-[calc(100%-40px)]", imageClassName)}
                     />
                     <div className="grow bg-linear-to-r from-primary from-50% to-black to-300% group-hover:to-400% text-white sm:h-10 sm:absolute sm:bottom-0 sm:left-0 sm:right-0 flex items-center justify-center transition-colors duration-300 ease-in-out">
                         <p className="text-center text-(size:--wp--preset--font-size--small) leading-3.5">
