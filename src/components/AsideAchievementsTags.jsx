@@ -104,7 +104,7 @@ const AsideAchievementsTags = () => {
 
 
     if (loading || !data?.optionAchievement) {
-        return <div>Loading...</div>
+        return null
     }
 
     return (

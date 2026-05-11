@@ -59,7 +59,7 @@ export default function AchievementsList() {
     });
 
     if (status === 'pending') {
-        return <p>Loading...</p>;
+        return null;
     }
 
     if (isError) {

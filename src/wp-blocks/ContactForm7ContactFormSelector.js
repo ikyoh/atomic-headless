@@ -302,7 +302,7 @@ export default function ContactForm7ContactFormSelector() {
   const siteUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL
 
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return null;
   if (error) return <div>Error...</div>;
 
 	return (

@@ -35,7 +35,7 @@ export default function AcfCarouselRoundedCards({attributes}) {
 	});
 
 	if (loading || !mediaDatas) {
-		return <div>Loading...</div>;
+		return null;
 	}
 
 
