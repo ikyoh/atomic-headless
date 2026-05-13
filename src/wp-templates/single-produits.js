@@ -11,11 +11,11 @@ export default function SingleProduct(props) {
 	const { title, subtitle, featuredImage, editorBlocks, template } = props.data.productBy;
 	const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 	const footerBlocks = props.data.footer?.editorBlocks;
-
+	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
 
 
 	return (
-	<Layout footerBlocks={footerBlocks}>
+	  <Layout footerBlocks={footerBlocks} navigationItems={optionNavigation}>
 		<ProductsBigMenu />
 		<Hero featuredURL={featuredImage?.node?.mediaItemUrl} title={title} subtitle={subtitle?.subtitle} isImageContain={template.templateName ==='Page-header-contain'} />
 		<main id="content">
@@ -109,6 +109,25 @@ SingleProduct.query = gql`
 		...${blocks.OtherProductsSubcategoriesCards.fragments.key}
 			}
 	    }
+
+
+        optionNavigation {
+            settingsNavigation {
+                navigation {
+                    isDesktop
+                    isMobile
+                    label
+                    labelMobile
+                    slug
+                    icon {
+                        node {
+                            sourceUrl
+                        }
+                    }
+                }
+            }
+        }
+
 
 		footer: templatePart(id: "footer", idType: SLUG) {
 			... on TemplatePart {

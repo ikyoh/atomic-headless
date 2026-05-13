@@ -12,9 +12,10 @@ export default function Component(props) {
   const { title, subtitle, editorBlocks, navigationInterne } = props.data.page;
   const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
   const footerBlocks = props.data.footer?.editorBlocks;
+	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
 
   return (
-    <Layout footerBlocks={footerBlocks}>
+    <Layout footerBlocks={footerBlocks} navigationItems={optionNavigation}>
       <ProductsBigMenu />
       <HeroYoutube title={title} subtitle={subtitle.subtitle} />
             {navigationInterne?.navigationInterne && <AsideNavigation items={navigationInterne.navigationInterne} />}
@@ -108,6 +109,24 @@ Component.query = gql`
         ...${blocks.CoreGroup.fragments.key}
       }
     }
+
+
+        optionNavigation {
+            settingsNavigation {
+                navigation {
+                    isDesktop
+                    isMobile
+                    label
+                    labelMobile
+                    slug
+                    icon {
+                        node {
+                            sourceUrl
+                        }
+                    }
+                }
+            }
+        }
 
     footer: templatePart(id: "footer", idType: SLUG) {
       ... on TemplatePart {
