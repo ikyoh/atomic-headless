@@ -301,12 +301,13 @@ export default function ContactForm7ContactFormSelector() {
   const { data, loading, error } = useQuery(GET_CONTACT_FORM_ID);
   const siteUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL
 
+console.log('data', data)
 
   if (loading) return null;
   if (error) return <div>Error...</div>;
 
 	return (
-		<ContactFormWrapper siteUrl={siteUrl} formId="1040">
+		<ContactFormWrapper siteUrl={siteUrl} formId={data?.optionContactForm?.settingsContact?.formId}>
       <Form />
 		</ContactFormWrapper>
 	);
