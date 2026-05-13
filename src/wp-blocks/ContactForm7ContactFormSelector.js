@@ -25,7 +25,7 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 import * as z from "zod";
 
 const formSchema = z.object({
-  'your-subject': z.string().min(1, "Champ requis"),
+  //'your-subject': z.string().min(1, "Champ requis"),
   'your-name':  z.string().min(1, "Champ requis"),
   'your-company':  z.string().optional(),
   'your-email': z.string().email("Email invalide"),
@@ -55,7 +55,7 @@ function Form({ handler, isLoading, isSent, hasError }) {
 
     const form = useForm({
     defaultValues: {
-      'your-subject': "",
+      //'your-subject': "",
       'your-name': "",
       'your-company': "",
       'your-email': "",
@@ -85,7 +85,7 @@ function Form({ handler, isLoading, isSent, hasError }) {
           }}
         >
           <FieldGroup>
-            <form.Field
+            {/* <form.Field
               name="your-subject"
             >
               {(field) => {
@@ -121,7 +121,7 @@ function Form({ handler, isLoading, isSent, hasError }) {
                   </Field>
                 )
               }}
-            </form.Field>
+            </form.Field> */}
             <form.Field
               name="your-name"
             >
