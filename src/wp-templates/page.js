@@ -11,13 +11,16 @@ import blocks from '../wp-blocks';
 
 export default function PageTemplate(props) {
 
+  console.log("Page props", props);
 	const { title, subtitle, featuredImage, editorBlocks, navigationInterne, template } = props.data.page;
 	const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 	const footerBlocks = props.data.footer?.editorBlocks;
+	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
+
 
 	return (
     <AsideProvider>
-      <Layout footerBlocks={footerBlocks}>
+      <Layout footerBlocks={footerBlocks} navigationItems={optionNavigation}>
         <ProductsBigMenu />
         <Hero featuredURL={featuredImage?.node?.mediaItemUrl} title={title} subtitle={subtitle.subtitle} />
         {navigationInterne?.navigationInterne && <AsideNavigation items={navigationInterne.navigationInterne} />}
@@ -123,6 +126,24 @@ PageTemplate.query = gql`
 
       }
     }
+
+        optionNavigation {
+            settingsNavigation {
+                navigation {
+                    isDesktop
+                    isMobile
+                    label
+                    labelMobile
+                    slug
+                    icon {
+                        node {
+                            sourceUrl
+                        }
+                    }
+                }
+            }
+        }
+  
 
     footer: templatePart(id: "footer", idType: SLUG) {
       ... on TemplatePart {

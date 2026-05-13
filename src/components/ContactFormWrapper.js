@@ -34,7 +34,7 @@ const ContactFormWrapper = ({ children, siteUrl, formId }) => {
   const [isLoading, setLoading] = useState(false)
   const [hasError, setError] = useState(null)
 
-  const apiUrl =`${siteUrl}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback/`
+  const apiUrl =`${siteUrl}wp-json/contact-form-7/v1/contact-forms/${formId}/feedback/`
 
   const formSubmitHandler = (payload) => {
 

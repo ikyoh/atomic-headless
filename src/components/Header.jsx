@@ -8,7 +8,9 @@ import { Button } from './ui/button';
 import threedPicto from '../../public/picto-3D.svg';
 import phonePicto from '../../public/picto-phone.svg';
 
-export default function Header() {
+export default function Header({ navigationItems = [] }) {
+
+    console.log('HEADER navigationItems', navigationItems)
     return (
         <header className="sticky z-60 top-0 border-b border-primary h-15 md:h-22.5 bg-background w-full overflow-hidden">
             <div className="flex mx-auto max-w-7xl items-center justify-between h-full px-5">
@@ -17,7 +19,7 @@ export default function Header() {
                         <Logo width="100%" height="100%" />
                     </Link>
                 </div>
-                <Menu />
+                <Menu navigationItems={navigationItems} />
                 <div className="basis-full flex items-center justify-end gap-2">
                     <ThemeToggle />
                     <Button asChild className="flex rounded-full h-10 w-10 p-0 drop-shadow-primary/50 drop-shadow-lg bg-linear-to-r from-primary to-primary hover:from-red-400 transition duration-400 ease-in-out hover:scale-105">

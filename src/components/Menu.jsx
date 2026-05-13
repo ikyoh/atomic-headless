@@ -1,45 +1,42 @@
 import { cn } from "@/lib/utils";
-import { gql, useQuery } from "@apollo/client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useMemo } from "react";
 
-export default function Menu({ isMobile = false }) {
+export default function Menu({ isMobile = false, navigationItems = [] }) {
 
-    const router = useRouter();
+    console.log('navigationItems', navigationItems)
+    // const router = useRouter();
 
-    const GET_MENU = gql`
-    query menu{
-        optionNavigation {
-            settingsNavigation {
-                navigation {
-                    isDesktop
-                    isMobile
-                    label
-                    labelMobile
-                    slug
-                    icon {
-                        node {
-                            sourceUrl
-                        }
-                    }
-                }
-            }
-        }
-    }
-    `;
+    // const GET_MENU = gql`
+    // query menu{
+    //     optionNavigation {
+    //         settingsNavigation {
+    //             navigation {
+    //                 isDesktop
+    //                 isMobile
+    //                 label
+    //                 labelMobile
+    //                 slug
+    //                 icon {
+    //                     node {
+    //                         sourceUrl
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // `;
 
-    const { data } = useQuery(GET_MENU);
+    // const { data } = useQuery(GET_MENU);
 
-    const items = useMemo(
-        () =>
-            data?.optionNavigation?.settingsNavigation?.navigation?.filter((item) =>
-                isMobile ? item.isMobile === isMobile : item.isDesktop !== isMobile
-            ) ?? [],
-        [data, isMobile]
-    );
+    // const items = useMemo(
+    //     () =>
+    //         data?.optionNavigation?.settingsNavigation?.navigation?.filter((item) =>
+    //             isMobile ? item.isMobile === isMobile : item.isDesktop !== isMobile
+    //         ) ?? [],
+    //     [data, isMobile]
+    // );
 
     return (
         <nav
@@ -51,9 +48,9 @@ export default function Menu({ isMobile = false }) {
             )}
         >
 
-            {items.map((item, index) => {
+            {navigationItems.map((item, index) => {
 
-                const isActive = router.asPath === item.slug;
+                //const isActive = router.asPath === item.slug;
 
                 return (
                     <Link key={index} href={item.slug} className="relative no-underline!">
@@ -79,7 +76,7 @@ export default function Menu({ isMobile = false }) {
 
                             {isMobile ? item.labelMobile : item.label}
 
-                            {isActive && (
+                            {/* {isActive && (
                                 <motion.div
                                     layoutId={isMobile ? "menu-indicator-mobile" : "menu-indicator-desktop"}
                                     transition={{
@@ -96,7 +93,7 @@ export default function Menu({ isMobile = false }) {
                                 >
                                     <div className={cn("absolute bg-primary rounded-full shadow-md shadow-primary left-1/2 -translate-x-1/2", isMobile ? "bottom-4 size-14" : "top-4 rotate-180 size-36")} />
                                 </motion.div>
-                            )}
+                            )} */}
 
                         </div>
 
