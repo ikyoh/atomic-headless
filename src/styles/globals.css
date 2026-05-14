@@ -49,6 +49,14 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

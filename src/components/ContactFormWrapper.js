@@ -28,8 +28,6 @@ const ErrorMessage = () => {
 
 const ContactFormWrapper = ({ children, siteUrl, formId }) => {
 
-
-
   const [isSent, setSent] = useState(false)
   const [isLoading, setLoading] = useState(false)
   const [hasError, setError] = useState(null)
