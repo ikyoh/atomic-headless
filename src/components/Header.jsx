@@ -5,7 +5,6 @@ import Menu from './Menu';
 import ThemeToggle from './theme/ThemeToggle';
 import { Button } from './ui/button';
 
-import threedPicto from '../../public/picto-3D.svg';
 import phonePicto from '../../public/picto-phone.svg';
 import Burger from './Burger';
 
@@ -23,7 +22,7 @@ export default function Header({ navigationItems = [] }) {
 
                 <div className="basis-full flex items-center justify-end gap-2">
                     <ThemeToggle />
-                    <Button asChild className="flex rounded-full h-10 w-10 p-0 drop-shadow-primary/50 drop-shadow-lg bg-linear-to-r from-primary to-primary hover:from-red-400 transition duration-400 ease-in-out hover:scale-105">
+                    {/* <Button asChild className="flex rounded-full h-10 w-10 p-0 drop-shadow-primary/50 drop-shadow-lg bg-linear-to-r from-primary to-primary hover:from-red-400 transition duration-400 ease-in-out hover:scale-105">
                         <Link href="/">
                             <Image
                                 src={threedPicto}
@@ -32,7 +31,7 @@ export default function Header({ navigationItems = [] }) {
                                 height={18}
                             />
                         </Link>
-                    </Button>
+                    </Button> */}
                     <Button asChild className="flex rounded-full h-10 w-10 md:w-auto md:px-4 p-0 drop-shadow-primary/50 drop-shadow-lg bg-linear-to-r from-primary to-primary hover:from-red-400 transition duration-400 ease-in-out hover:scale-105">
                         <Link href="/contact" className="no-underline!">
                             <span className="hidden md:inline text-white uppercase">
