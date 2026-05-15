@@ -49,7 +49,7 @@ const PAGE_404_QUERY = gql`
 					mediaItemUrl
 				}
 			}
-      editorBlocks {
+    editorBlocks {
         name
         __typename
         renderedHtml
@@ -82,8 +82,25 @@ const PAGE_404_QUERY = gql`
         ...${blocks.AcfTimeline.fragments.key}
         ...${blocks.CoreGroup.fragments.key}
 
-      }
+    }
 		}
+
+		optionNavigation {
+            settingsNavigation {
+                navigation {
+                    isDesktop
+                    isMobile
+                    label
+                    labelMobile
+                    slug
+                    icon {
+                        node {
+                            sourceUrl
+                        }
+                    }
+                }
+            }
+        }
 
 		footer: templatePart(id: "footer", idType: SLUG) {
 			... on TemplatePart {
@@ -131,15 +148,13 @@ export default function Custom404({ data }) {
 	const page = data?.page;
 	const footerBlocks = data?.footer?.editorBlocks;
 
-
 	const blockList = flatListToHierarchical(page.editorBlocks ?? [], {
 		childrenKey: "innerBlocks",
 	});
 
-console.log('blockList', blockList)
 
 	return (
-		<Layout footerBlocks={footerBlocks}>
+		<Layout footerBlocks={footerBlocks} navigationItems={optionNavigation}>
 			<ProductsBigMenu />
 			<Hero
 				featuredURL={page.featuredImage?.node?.mediaItemUrl}
@@ -166,7 +181,6 @@ async function fetchPageByUri({ endpoint, uri }) {
 			},
 		}),
 	});
-    console.log('response', response)
 
 	if (!response.ok) {
 		const errorBody = await response.text();
