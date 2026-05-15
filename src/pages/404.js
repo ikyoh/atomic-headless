@@ -142,12 +142,12 @@ const PAGE_404_QUERY = gql`
 	}
 `;
 
-export default function Custom404({ data }) {
+export default function Custom404(props) {
 
-	console.log("404 page data", data);
-	const page = data?.page;
-	const footerBlocks = data?.footer?.editorBlocks;
-	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
+	console.log("404 page data", props.data);
+	const page = props.data?.page;
+	const footerBlocks = props.data?.footer?.editorBlocks;
+	const optionNavigation = props.data?.optionNavigation?.settingsNavigation?.navigation || [];
 	const blockList = flatListToHierarchical(page.editorBlocks ?? [], {
 		childrenKey: "innerBlocks",
 	});
