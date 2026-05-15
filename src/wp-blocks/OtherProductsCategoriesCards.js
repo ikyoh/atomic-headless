@@ -42,7 +42,6 @@ export default function OtherProductsCategoriesCards() {
 	query: GET_PRODUCTS,
 	});
 
-	console.log('data', data)
 	if (loading) return null
 
 	return (

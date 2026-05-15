@@ -11,7 +11,6 @@ import blocks from '../wp-blocks';
 
 export default function PageTemplate(props) {
 
-  console.log("Page props", props);
 	const { title, subtitle, featuredImage, editorBlocks, navigationInterne, template } = props.data.page;
 	const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 	const footerBlocks = props.data.footer?.editorBlocks;

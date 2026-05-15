@@ -5,7 +5,6 @@ import Header from "./Header";
 
 export default function Layout({ children, footerBlocks, navigationItems = [] }) {
 
-    console.log('LAYOUT navigationItems', navigationItems)
 
     return (
         <>

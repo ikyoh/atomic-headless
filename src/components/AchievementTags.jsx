@@ -93,7 +93,6 @@ export default function AchievementTags({ product, tags, className }) {
         return <div>Loading...</div>;
     }
 
-    console.log('achievementProduct', achievementProduct)
 
     return (
         <div className={cn("p-3 flex gap-3 w-full justify-end", className && className)}>

@@ -3,8 +3,6 @@ import CardZoomLink from "../components/CardZoomLink";
 
 export default function AcfCardLink({blockCardWithLink}) {
 
-	console.log('blockCardWithLink', blockCardWithLink)
-
 	return (
 		<CardZoomLink
 			imageURL={blockCardWithLink.image.node.mediaItemUrl}
