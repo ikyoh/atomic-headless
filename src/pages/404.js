@@ -147,7 +147,7 @@ export default function Custom404({ data }) {
 	console.log("404 page data", data);
 	const page = data?.page;
 	const footerBlocks = data?.footer?.editorBlocks;
-
+	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
 	const blockList = flatListToHierarchical(page.editorBlocks ?? [], {
 		childrenKey: "innerBlocks",
 	});
