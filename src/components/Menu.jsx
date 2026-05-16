@@ -11,7 +11,7 @@ export default function Menu({ navigationItems = [] }) {
             )}
         >
 
-            {navigationItems.map((item, index) => {
+            {navigationItems.filter(f => f.isDesktop).map((item, index) => {
 
 
                 return (
