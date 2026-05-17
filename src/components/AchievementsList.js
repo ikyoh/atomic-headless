@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import React from "react";
 import AchievementCard from "./AchievementCard";
 import { Button } from "./ui/button";
-
+import { Skeleton } from "./ui/skeleton";
 
 const fetchPosts = async ({ pageParam }) => {
 
@@ -49,7 +49,7 @@ export default function AchievementsList() {
     } = useInfiniteQuery({
         queryKey: ['achievements', params],
         queryFn: fetchPosts,
-        initialPageParam: `${baseUrl}/wp-json/wp/v2/media?achievement=1&per_page=12&page=1${params ? `&${params}` : ''}`,
+        initialPageParam: `${baseUrl}/wp-json/wp/v2/media?achievement=1&per_page=20&page=1${params ? `&${params}` : ''}`,
         getNextPageParam: ({ headerLink }) => {
             if (!headerLink) return undefined;
             const links = parseLinkHeader(headerLink);
@@ -58,8 +58,13 @@ export default function AchievementsList() {
         },
     });
 
-    if (status === 'pending') {
-        return null;
+    if (status === 'pending' || status === 'loading') {
+        return (<>
+            {Array.from({ length: 10 }).map((_, i) => (
+                <Skeleton key={i} className="h-full w-full rounded-(--wp--preset--border-radius--large)" />
+            ))}
+        </>
+        );
     }
 
     if (isError) {
@@ -67,7 +72,7 @@ export default function AchievementsList() {
     }
 
     return (<>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-(--wp--preset--spacing--large)">
+
             {data.pages.map((page, i) => (
                 <React.Fragment key={i}>
                     {page.posts.map(post => (
@@ -75,21 +80,23 @@ export default function AchievementsList() {
                     ))}
                 </React.Fragment>
             ))}
-            </div>
-            <div className="flex items-center justify-center my-10">
-                <Button
-                    variant="secondary"
-                    onClick={() => fetchNextPage()}
-                    disabled={!hasNextPage || isFetchingNextPage}
-                    className="uppercase rounded-(--wp--preset--border-radius--base) drop-shadow-secondary drop-shadow-sm bg-linear-to-r from-secondary to-secondary hover:from-red-400 hover:to-primary transition duration-400 ease-in-out hover:scale-105"
-                    >
-                    {isFetchingNextPage
-                        ? 'Chargement...'
-                        : hasNextPage
-                        ? 'Plus de réalisations'
-                        : 'Rien de plus à charger'}
-                </Button>
-            </div>
-                        </>
+
+            {hasNextPage && (
+                <div className="col-span-full flex items-center justify-center my-10">
+                    <Button
+                        variant="secondary"
+                        onClick={() => fetchNextPage()}
+                        disabled={!hasNextPage || isFetchingNextPage}
+                        className="uppercase rounded-(--wp--preset--border-radius--base) drop-shadow-secondary drop-shadow-sm bg-linear-to-r from-secondary to-secondary hover:from-red-400 hover:to-primary transition duration-400 ease-in-out hover:scale-105"
+                        >
+                        {isFetchingNextPage
+                            ? 'Chargement...'
+                            : hasNextPage
+                            ? 'Plus de réalisations'
+                            : 'Rien de plus à charger'}
+                    </Button>
+                </div>
+                )}
+    </>
     );
 }

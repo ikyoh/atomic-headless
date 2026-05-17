@@ -28,7 +28,7 @@ export default function Burger({ navigationItems = [] }) {
                 </Button>
             </DrawerTrigger>
             <DrawerContent>
-                <div className="mx-auto w-full h-screen! max-w-sm">
+                <div className="mx-auto h-screen! max-w-sm">
                     <DrawerHeader>
                         <DrawerTitle></DrawerTitle>
                     </DrawerHeader>
@@ -40,19 +40,19 @@ export default function Burger({ navigationItems = [] }) {
                                 <Link key={index} href={item.slug} className="relative no-underline!">
                                     <div
                                         className={cn(
-                                            "relative font-semibold hover:text-primary transition-colors text-primary flex items-center justify-start px-2 flex-1",
+                                            "relative font-semibold text-xl hover:text-primary transition-colors text-primary flex items-center justify-start px-2 flex-1",
                                         )}
                                     >
 
                                         {item.icon?.node?.sourceUrl && (
-                                            <div className="flex-none w-12 h-12 p-1.5">
-                                                <Image
-                                                    src={item.icon.node.sourceUrl}
-                                                    alt=""
-                                                    width={40}
-                                                    height={40}
-                                                />
-                                            </div>
+
+                                            <Image
+                                                src={item.icon.node.sourceUrl}
+                                                alt=""
+                                                width={50}
+                                                height={50}
+                                            />
+
                                         )}
 
                                         {item.label}

@@ -1,4 +1,3 @@
-import AsideAchievementsTags from '@/components/AsideAchievementsTags';
 import AsideNavigation from '@/components/AsideNavigation';
 import Hero from '@/components/Hero';
 import Layout from '@/components/Layout';
@@ -15,7 +14,7 @@ export default function PageTemplate(props) {
 	const blockList = flatListToHierarchical(editorBlocks, { childrenKey: 'innerBlocks' });
 	const footerBlocks = props.data.footer?.editorBlocks;
 	const optionNavigation = props.data.optionNavigation?.settingsNavigation?.navigation || [];
-
+ console.log('blockList', blockList)
 
 	return (
     <AsideProvider>
@@ -23,7 +22,7 @@ export default function PageTemplate(props) {
         <ProductsBigMenu />
         <Hero featuredURL={featuredImage?.node?.mediaItemUrl} title={title} subtitle={subtitle.subtitle} />
         {navigationInterne?.navigationInterne && <AsideNavigation items={navigationInterne.navigationInterne} />}
-        {template?.templateName === "Page-realisations" && <AsideAchievementsTags />}
+        {/* {template?.templateName === "Page-realisations" && <AsideAchievementsTags />} */}
         <main id="content">
           <WordPressBlocksViewer blocks={blockList} />
         </main>

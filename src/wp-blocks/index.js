@@ -16,6 +16,7 @@ import ContactForm7ContactFormSelector from "./ContactForm7ContactFormSelector";
 import CoreGroup from "./CoreGroup";
 import CoreImage from "./CoreImage";
 import OtherAchievements from "./OtherAchievements";
+import OtherAchievementsFilter from "./OtherAchievementsFilter";
 import OtherBreadcrumb from "./OtherBreadcrumb";
 import OtherFooterCta from "./OtherFooterCta";
 import OtherProductsCategoriesCards from "./OtherProductsCategoriesCards";
@@ -38,6 +39,7 @@ const blocks = {
   OtherFooterCta: OtherFooterCta,
   OtherAchievements: OtherAchievements,
   OtherBreadcrumb: OtherBreadcrumb,
+  OtherAchievementsFilter: OtherAchievementsFilter,
   OtherProductsCategoriesCards: OtherProductsCategoriesCards,
   OtherProductsSubcategoriesCards: OtherProductsSubcategoriesCards,
   AcfCardPicture: AcfCardPicture,
