@@ -40,7 +40,7 @@ export default function Burger({ navigationItems = [] }) {
                                 <Link key={index} href={item.slug} className="relative no-underline!">
                                     <div
                                         className={cn(
-                                            "relative font-semibold text-xl hover:text-primary transition-colors text-primary flex items-center justify-start px-2 flex-1",
+                                            "relative font-semibold text-xl hover:text-primary transition-colors text-primary flex gap-2 items-center justify-start px-2 flex-1",
                                         )}
                                     >
 
@@ -49,9 +49,9 @@ export default function Burger({ navigationItems = [] }) {
                                             <Image
                                                 src={item.icon.node.sourceUrl}
                                                 alt=""
-                                                width={50}
-                                                height={50}
-                                                className="h-12 w-12"
+                                                width={45}
+                                                height={45}
+                                                className="h-9 w-9"
                                             />
 
                                         )}
