@@ -32,12 +32,12 @@ export default function Burger({ navigationItems = [] }) {
                     <DrawerHeader>
                         <DrawerTitle></DrawerTitle>
                     </DrawerHeader>
-                    <div className="p-4 pb-0 bg-amber-300 flex flex-col gap-2">
+                    <div className="p-4 pb-0 flex flex-col gap-2">
 
                         {navigationItems.filter(f => f.isMobile).map((item, index) => {
 
                             return (
-                                <Link key={index} href={item.slug} className="relative no-underline! bg-amber-600">
+                                <Link key={index} href={item.slug} className="relative no-underline!">
                                     <div
                                         className={cn(
                                             "relative font-semibold text-xl hover:text-primary transition-colors text-primary flex gap-2 items-center justify-start px-2 flex-1",
@@ -45,7 +45,7 @@ export default function Burger({ navigationItems = [] }) {
                                     >
 
                                         {item.icon?.node?.sourceUrl && (
-                                            <div className="h-11 w-11">
+                                            <div className="h-10 w-10">
                                                 <Image
                                                     src={item.icon.node.sourceUrl}
                                                     alt=""
