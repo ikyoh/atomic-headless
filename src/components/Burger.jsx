@@ -45,12 +45,12 @@ export default function Burger({ navigationItems = [] }) {
                                     >
 
                                         {item.icon?.node?.sourceUrl && (
-                                            <div className="h-10 w-10">
+                                            <div className="h-9 w-9">
                                                 <Image
                                                     src={item.icon.node.sourceUrl}
                                                     alt=""
-                                                    width={32}
-                                                    height={32}
+                                                    width={36}
+                                                    height={36}
                                                     className="h-full w-full object-cover"
                                                 />
 
