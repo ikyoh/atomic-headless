@@ -32,7 +32,7 @@ export default function Burger({ navigationItems = [] }) {
                     <DrawerHeader>
                         <DrawerTitle></DrawerTitle>
                     </DrawerHeader>
-                    <div className="p-4 pb-0">
+                    <div className="p-4 pb-0 space-y-2">
 
                         {navigationItems.filter(f => f.isMobile).map((item, index) => {
 
@@ -51,6 +51,7 @@ export default function Burger({ navigationItems = [] }) {
                                                 alt=""
                                                 width={50}
                                                 height={50}
+                                                className="h-12 w-12"
                                             />
 
                                         )}
