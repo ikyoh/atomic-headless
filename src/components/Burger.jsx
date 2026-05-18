@@ -32,12 +32,12 @@ export default function Burger({ navigationItems = [] }) {
                     <DrawerHeader>
                         <DrawerTitle></DrawerTitle>
                     </DrawerHeader>
-                    <div className="p-4 pb-0 space-y-2">
+                    <div className="p-4 pb-0 bg-amber-300 flex flex-col gap-2">
 
                         {navigationItems.filter(f => f.isMobile).map((item, index) => {
 
                             return (
-                                <Link key={index} href={item.slug} className="relative no-underline!">
+                                <Link key={index} href={item.slug} className="relative no-underline! bg-amber-600">
                                     <div
                                         className={cn(
                                             "relative font-semibold text-xl hover:text-primary transition-colors text-primary flex gap-2 items-center justify-start px-2 flex-1",
@@ -45,15 +45,16 @@ export default function Burger({ navigationItems = [] }) {
                                     >
 
                                         {item.icon?.node?.sourceUrl && (
+                                            <div className="h-11 w-11">
+                                                <Image
+                                                    src={item.icon.node.sourceUrl}
+                                                    alt=""
+                                                    width={32}
+                                                    height={32}
+                                                    className="h-full w-full object-cover"
+                                                />
 
-                                            <Image
-                                                src={item.icon.node.sourceUrl}
-                                                alt=""
-                                                width={45}
-                                                height={45}
-                                                className="h-9 w-9"
-                                            />
-
+                                            </div>
                                         )}
 
                                         {item.label}
@@ -66,7 +67,6 @@ export default function Burger({ navigationItems = [] }) {
                         })}
 
                     </div>
-
                 </div>
             </DrawerContent>
         </Drawer >
