@@ -15,7 +15,7 @@ export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 		const activeBlock = blocks[activeIndex];
 
 	return (
-		<div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center px-5">
+		<div className="mx-auto w-full max-w-full! grid grid-cols-1 md:grid-cols-2 gap-5 items-center px-5">
 			<div className="w-full space-y-2">
 				<Accordion defaultValue={["0"]} className="w-full space-y-2">
 				{blocks.map((block, index) => (
