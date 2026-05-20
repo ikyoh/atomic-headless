@@ -11,3 +11,5 @@ const templates = {
 };
 
 export default templates;
+
+// OtherAchievementsFilter.js
