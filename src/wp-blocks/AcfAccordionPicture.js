@@ -15,7 +15,7 @@ export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 	const activeBlock = blocks[activeIndex];
 
 	return (
-		<div className="mx-auto max-w-[calc(100vw-100px)] md:max-w-(--wp--style--global--content-size) w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+		<div className="mx-auto max-w-[calc(100vw-100px)] md:max-w-(--wp--style--global--wide-size) w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
 			<div className="w-full space-y-2">
 				<Accordion defaultValue={["0"]} className="w-full space-y-2">
 				{blocks.map((block, index) => (
@@ -36,7 +36,7 @@ export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 				))}
 				</Accordion>
 			</div>
-			<div className="bg-dark p-5 rounded-xl border-white/50 h-60 md:h-135">
+			<div className="bg-dark p-5 rounded-xl border-white/50 h-60 md:h-full">
 				{activeBlock?.image?.node?.mediaItemUrl && (
 					<Image
 						src={activeBlock.image.node.mediaItemUrl}
