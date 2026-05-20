@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function AcfLogos({blockLogos}) {
 
 	return (
-        <div className="mx-auto max-w-full overflow-hidden relative group my-3">
+        <div className="mx-auto max-w-full! overflow-hidden relative group my-3">
             <div className="relative">
                 <InfiniteSlider
                     speed={40}
