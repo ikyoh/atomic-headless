@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function AcfAccordionPicture({blockAccordionWithPicture}) {
 	const blocks = blockAccordionWithPicture?.blocks ?? [];
 	const [activeIndex, setActiveIndex] = useState(0);
-	const activeBlock = blocks[activeIndex];
+		const activeBlock = blocks[activeIndex];
 
 	return (
 		<div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center px-5">
