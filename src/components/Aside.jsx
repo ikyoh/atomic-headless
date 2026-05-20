@@ -11,8 +11,8 @@ const Aside = ({ children }) => {
     return (
         <nav
             className={cn(
-                "flex fixed top-25 md:top-40 z-30 w-70 transition-all duration-300 ease-in-out",
-                isActive ? "translate-x-0 right-0" : "translate-x-full right-2 md:right-12"
+                "flex fixed top-25 md:top-40 z-30 w-70 transition-all duration-300 ease-in-out right-2 md:-right-2",
+                isActive ? "translate-x-0 right-0 md:right-12 md:translate-x-full" : "translate-x-full md:translate-x-0"
             )}
         >
             <div
@@ -26,7 +26,7 @@ const Aside = ({ children }) => {
                     width={21}
                     className={cn(
                         "h-4 ml-2 transition-transform duration-300",
-                        isActive ? "rotate-180" : "rotate-0"
+                        isActive ? "rotate-180 md:rotate-0" : "rotate-0 md:rotate-180"
                     )}
                 />
             </div>
