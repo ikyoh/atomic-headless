@@ -38,7 +38,7 @@ type MultiSelectContextType = {
   single: boolean
   onItemAdded: (value: string, label: ReactNode) => void
 }
-const MultiSelectContext = createContext<MultiSelectContextType | null>(null)
+const MultiSelectContext = createContext < MultiSelectContextType | null > (null)
 
 export function MultiSelect({
   children,
@@ -55,15 +55,15 @@ export function MultiSelect({
 }) {
   const [open, setOpen] = useState(false)
   const [internalValues, setInternalValues] = useState(
-    new Set<string>(values ?? defaultValues),
+    new Set < string > (values ?? defaultValues),
   )
   const selectedValues = values ? new Set(values) : internalValues
-  const [items, setItems] = useState<Map<string, ReactNode>>(new Map())
+  const [items, setItems] = useState < Map < string, ReactNode>> (new Map())
 
   function toggleValue(value: string) {
     const getNewSet = (prev: Set<string>) => {
       if (single) {
-        return prev.has(value) ? new Set<string>() : new Set<string>([value])
+        return prev.has(value) ? new Set < string > () : new Set < string > ([value])
       }
       const newSet = new Set(prev)
       if (newSet.has(value)) {
@@ -147,8 +147,8 @@ export function MultiSelectValue({
   const { selectedValues, toggleValue, items, open, single } =
     useMultiSelectContext()
   const [overflowAmount, setOverflowAmount] = useState(0)
-  const valueRef = useRef<HTMLDivElement>(null)
-  const overflowRef = useRef<HTMLDivElement>(null)
+  const valueRef = useRef < HTMLDivElement > (null)
+  const overflowRef = useRef < HTMLDivElement > (null)
 
   const shouldWrap =
     overflowBehavior === "wrap" ||
@@ -159,7 +159,7 @@ export function MultiSelectValue({
 
     const containerElement = valueRef.current
     const overflowElement = overflowRef.current
-    const items = containerElement.querySelectorAll<HTMLElement>(
+    const items = containerElement.querySelectorAll < HTMLElement > (
       "[data-selected-item]",
     )
 

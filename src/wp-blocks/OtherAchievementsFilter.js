@@ -128,89 +128,90 @@ const OtherAchievementsFilter = () => {
 				id="other-achievements-filters"
 				className={cn(
 					"gap-2 items-center justify-center bg-medium p-2 rounded-xl flex-wrap w-auto max-w-full!",
-					filtersOpen ? "grid grid-cols-1" : "hidden",
+					filtersOpen ? "flex" : "hidden",
 					"md:flex"
 				)}
 			>
+		<div>
+			<div className="flex items-center bg-white rounded-lg pl-2.5 gap-3">
+				<span
+					onClick={() => {
+						setIsActive(true);
+						searchRef.current.focus();
+					}}
+					style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+				>
+					<SearchIcon />
+				</span>
+				<Input
+					ref={searchRef}
+					placeholder="Rechercher"
+					value={search}
+					onChange={(e) => setSearch(e.target.value)}
+					className="border-0 h-8 text-black bg-transparent focus-visible:ring-0"
+				/>
+			</div>
+		</div>
 
-				<div className="flex items-center bg-white rounded-lg pl-2.5 gap-3">
-					<span
-						onClick={() => {
-							setIsActive(true);
-							searchRef.current.focus();
-						}}
-						style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-					>
-						<SearchIcon />
-					</span>
-					<Input
-						ref={searchRef}
-						placeholder="Rechercher"
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						className="border-0 h-8 text-black bg-transparent focus-visible:ring-0"
-					/>
-				</div>
+		{data.optionAchievement.settingsAchievement.critria.map((item, index) => (
+			<div key={index}>
+				<MultiSelect
+					onValuesChange={(values) => handleSetSearchParams(slugify(item.titre), values)}
+					values={searchParams.getAll(slugify(item.titre)) || []}
+				>
 
-			{data.optionAchievement.settingsAchievement.critria.map((item, index) => (
-				<div key={index}>
-					<MultiSelect
-						onValuesChange={(values) => handleSetSearchParams(slugify(item.titre), values)}
-						values={searchParams.getAll(slugify(item.titre)) || []}
-					>
+					<MultiSelectTrigger className="w-full group">
+						<Image
+							src={item?.icon?.node?.mediaItemUrl}
+							alt={item.titre}
+							width={24}
+							height={24}
+							className="h-6 w-6 rounded-none dark:invert group-hover:invert"
+						/>
 
-						<MultiSelectTrigger className="w-full group">
-							<Image
-								src={item?.icon?.node?.mediaItemUrl}
-								alt={item.titre}
-								width={24}
-								height={24}
-								className="h-6 w-6 rounded-none dark:invert group-hover:invert"
-							/>
+						<MultiSelectValue
+							placeholder={item.titre}
+							className="flex-none w-full"
+						/>
 
-							<MultiSelectValue
-								placeholder={item.titre}
-								className="flex-none w-full"
-							/>
+					</MultiSelectTrigger>
 
-						</MultiSelectTrigger>
+					<MultiSelectContent search={false}>
+						<MultiSelectGroup>
 
-						<MultiSelectContent search={false}>
-							<MultiSelectGroup>
+							{item?.elements?.map((element, index) => (
+								<MultiSelectItem
+									key={index}
+									value={element.tag}
+									className="text-dark"
+									badgeLabel={
+										<Image
+											src={element?.icon?.node?.mediaItemUrl}
+											alt={element.titre}
+											width={20}
+											height={20}
+											className="h-5 w-5 not-even:invert dark:invert-0 object-cover rounded-none"
+										/>
+									}
+								>
+									{element.titre}
+								</MultiSelectItem>
+							))}
 
-								{item?.elements?.map((element, index) => (
-									<MultiSelectItem
-										key={index}
-										value={element.tag}
-										className="text-dark"
-										badgeLabel={
-											<Image
-												src={element?.icon?.node?.mediaItemUrl}
-												alt={element.titre}
-												width={20}
-												height={20}
-												className="h-5 w-5 not-even:invert dark:invert-0 object-cover rounded-none"
-											/>
-										}
-									>
-										{element.titre}
-									</MultiSelectItem>
-								))}
+						</MultiSelectGroup>
+					</MultiSelectContent>
 
-							</MultiSelectGroup>
-						</MultiSelectContent>
-
-					</MultiSelect>
-				</div>
-			))}
-			<Button
-				onClick={() => {
-					router.replace(pathname)
-				}}
-				className="flex rounded-full h-7 w-7 bg-tertiary place-self-center"
-			>
-				<X className="h-4 w-4" color="black" />
-			</Button>
+				</MultiSelect>
+			</div>
+		))}
+		<Button
+			onClick={() => {
+				router.replace(pathname)
+			}}
+			className="flex rounded-full h-7 w-7 bg-tertiary"
+		>
+			<X className="h-4 w-4" color="black" />
+		</Button>
 			</div>
 		</>
 
