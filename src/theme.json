@@ -170,6 +170,21 @@
 							"fontFamily": "Montserrat"
 						}
 					]
+				},
+				{
+					"name": "Buffalo",
+					"slug": "buffalo",
+					"fontFamily": "Buffalo, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/buffalo/Buffalo.woff2"
+							],
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontFamily": "Buffalo"
+						}
+					]
 				}
 			]
 		},

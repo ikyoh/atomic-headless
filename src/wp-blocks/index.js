@@ -13,7 +13,9 @@ import AcfTeam from "./AcfTeam";
 import AcfTimeline from "./AcfTimeline";
 import AcfYoutube from "./AcfYoutube";
 import ContactForm7ContactFormSelector from "./ContactForm7ContactFormSelector";
+import CoreButton from './CoreButton';
 import CoreGroup from "./CoreGroup";
+import CoreHeading from './CoreHeading';
 import CoreImage from "./CoreImage";
 import OtherAchievements from "./OtherAchievements";
 import OtherAchievementsFilter from "./OtherAchievementsFilter";
@@ -32,9 +34,9 @@ const blocks = {
   CoreImage: CoreImage,
   CoreSeparator: CoreBlocks.CoreSeparator,
   CoreList: CoreBlocks.CoreList,
-  CoreButton: CoreBlocks.CoreButton,
+  CoreButton: CoreButton,
   CoreButtons: CoreBlocks.CoreButtons,
-  CoreHeading: CoreBlocks.CoreHeading,
+  CoreHeading: CoreHeading,
   CoreGroup: CoreGroup,
   OtherFooterCta: OtherFooterCta,
   OtherAchievements: OtherAchievements,
