@@ -6,7 +6,7 @@ export default function Sitemap() {
 
 export function getServerSideProps(ctx) {
   return getSitemapProps(ctx, {
-    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_URL || "http://atomic.fr",
+    frontendUrl: "https://www.atomic.fr",
     sitemapPathsToIgnore: ['/wp-sitemap-users-*'],
   });
 }
